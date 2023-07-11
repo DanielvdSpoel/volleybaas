@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-[20vh]">
+    <div class="mt-[20vh] lg:mt-[10vh]">
         <div class="flex justify-center">
             <h1 class="tracking-tight text-2xl font-semibold">De volleybaas is:</h1>
         </div>
@@ -7,7 +7,7 @@
             <h2 class="tracking-tight text-4xl font-bold"> {{ volleybaas }}</h2>
         </div>
         <div class="flex justify-center">
-            <img class="mt-10 w-[60%]" :src="'/img/' + volleybaas + '.jpg' " alt="Volleybaas">
+            <img class="mt-10 w-[60%] lg:w-[40%]" :src="'/img/' + volleybaas + '.jpg' " alt="Volleybaas">
         </div>
     </div>
 </template>
