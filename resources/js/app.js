@@ -1,9 +1,6 @@
 import './bootstrap';
-
-import {createInertiaApp} from "@inertiajs/vue3";
-
 import { createApp, h } from 'vue'
-import { createI18n } from 'vue-i18n'
+import { createInertiaApp } from '@inertiajs/vue3'
 
 createInertiaApp({
     resolve: name => {
@@ -11,19 +8,8 @@ createInertiaApp({
         return pages[`./Pages/${name}.vue`]
     },
     setup({ el, App, props, plugin }) {
-        const messages = JSON.parse(props.initialPage.props.translations);
-
-        const i18n = createI18n({
-            locale: 'nl',
-            fallbackLocale: 'en',
-            globalInjection: true,
-            messages,
-        })
-
         createApp({ render: () => h(App, props) })
             .use(plugin)
-            .use(i18n)
-            .mixin({ methods: { route } })
             .mount(el)
     },
 })
