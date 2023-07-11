@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $names = ['Kevin', 'Trevor', 'Martijn'];
     return inertia('Home', [
-        'volleybaas' => array_rand(['Kevin', 'Trevor', 'Martijn'])
+        'volleybaas' => $names[array_rand($names)]
     ]);
 });
